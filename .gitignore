@@ -5,3 +5,7 @@ signpdf.egg-info
 publish.sh
 
 .idea/
+
+signpdf2.egg-info/
+
+build/

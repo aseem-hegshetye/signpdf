@@ -1,24 +1,22 @@
-import os
-from setuptools import setup, find_packages
+import setuptools
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
-setup(
-    name="signpdf",
-    version="0.0.3",
-    author="Charlie DeTar",
-    author_email="cfd@media.mit.edu",
-    url="https://github.com/yourcelf/signpdf",
-    description=("Utility for adding signatures images to PDF documents"),
-    long_description=read('README.md'),
-    license="MIT",
-    py_modules=['signpdf'],
-    entry_points={'console_scripts': ['signpdf = signpdf:main']},
-    install_requires=['reportlab', 'pypdf2'],
-    include_package_data=True
+setuptools.setup(
+    name='signpdf2',
+    version='1',
+    scripts=['signpdf2'],
+    author="Aseem Hegshetye",
+    author_email="aseem.hegshetye@gmail.com",
+    description="Python package to sign a pdf",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/aseem-hegshetye/signpdf",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )
-
-
-    
-
