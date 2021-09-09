@@ -4,7 +4,7 @@ pip install twine pathlib wheel bumpversion
 bumpversion --current-version 4.0.0 major setup.py signpdf2/__init__.py
 
 # empty build folder
-rm -rf ./build
+rm -rf ./dist
 
 # create build package to deploy
 python setup.py sdist bdist_wheel
