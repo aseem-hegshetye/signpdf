@@ -1,6 +1,6 @@
 import requests
 
-from create_tmp_file import CreateTmpFileMixin
+from signpdf2.create_tmp_file import CreateTmpFileMixin
 
 
 class GetFileFromUrl(CreateTmpFileMixin):
