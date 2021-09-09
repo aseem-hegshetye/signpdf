@@ -26,6 +26,6 @@ setup(
     ],
     packages=["signpdf2"],
     include_package_data=True,
-    install_requires=["PyPDF2", "requests", "urllib3"],
+    install_requires=["PyPDF2", "requests", "urllib3", "reportlab"],
 
 )

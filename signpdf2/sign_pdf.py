@@ -3,8 +3,8 @@ import datetime
 import PyPDF2
 from reportlab.pdfgen import canvas
 
-from create_tmp_file import CreateTmpFileMixin
-from pdf_utilites import PdfUtilities
+from signpdf2.create_tmp_file import CreateTmpFileMixin
+from signpdf2.pdf_utilites import PdfUtilities
 
 
 class SignPdf(PdfUtilities,
@@ -14,9 +14,9 @@ class SignPdf(PdfUtilities,
     we use units instead of pixel. Units are pdf-standard units (1/72 inch)
     """
 
-    def __init__(self, sign_w, sign_h,
-                 page_num, offset_x, offset_y,
-                 pdf_file, signature_file):
+    def __init__(self, sign_w: int, sign_h: int,
+                 page_num: int, offset_x: int, offset_y: int,
+                 pdf_file: str, signature_file: str):
         """
         :param sign_w: signature width in units
         :param sign_h: signature height in units
@@ -34,7 +34,7 @@ class SignPdf(PdfUtilities,
         self.pdf_file = pdf_file
         self.signature_file = signature_file
 
-    def sign_pdf(self, sign_date=True):
+    def sign_pdf(self, sign_date: bool = True):
         """
         Draw signature on a temporary empty single page pdf.
         Then merge this page with original pdf page. If signature is needed
@@ -69,7 +69,7 @@ class SignPdf(PdfUtilities,
 
         return writer
 
-    def get_pdf_file_reader(self, file=None):
+    def get_pdf_file_reader(self, file: str = None):
         """
         :param file: pdf file name with path
         :return: file reader object , keeping file open in read mode. if we
@@ -81,7 +81,11 @@ class SignPdf(PdfUtilities,
         pdf_file = open(file, 'rb')
         return PyPDF2.PdfFileReader(pdf_file)
 
-    def merge_two_pdf_pages(self, page1, page2):
+    def merge_two_pdf_pages(
+            self,
+            page1: PyPDF2.pdf.PageObject,
+            page2: PyPDF2.pdf.PageObject
+    ) -> PyPDF2.pdf.PageObject:
         """
         Merge page2 in page1
         :param page1: pdf page - PyPDF2.pdf.PageObject
