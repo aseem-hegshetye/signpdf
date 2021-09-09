@@ -4,11 +4,9 @@ import PyPDF2
 from reportlab.pdfgen import canvas
 
 from signpdf2.create_tmp_file import CreateTmpFileMixin
-from signpdf2.pdf_utilites import PdfUtilities
 
 
-class SignPdf(PdfUtilities,
-              CreateTmpFileMixin):
+class SignPdf(CreateTmpFileMixin):
     """
     Sign a pdf with signature image at desired location.
     we use units instead of pixel. Units are pdf-standard units (1/72 inch)
