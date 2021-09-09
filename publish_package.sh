@@ -1,7 +1,7 @@
 pip install twine pathlib wheel bumpversion
 
 # use current version below
-bumpversion --current-version 3.0.0 major setup.py signpdf2/__init__.py
+bumpversion --current-version 4.0.0 major setup.py signpdf2/__init__.py
 
 # empty build folder
 rm -rf ./build
