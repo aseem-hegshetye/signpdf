@@ -5,6 +5,9 @@ from signpdf2.sign_pdf import SignPdf
 
 
 class TestSignPdf:
+    def __init__(self):
+        pass
+
     def setup_method(self, method):
         self.sign_pdf = SignPdf(
             sign_w=100,

@@ -9,3 +9,5 @@ publish.sh
 signpdf2.egg-info/
 
 build/
+
+venv2/

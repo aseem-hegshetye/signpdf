@@ -6,6 +6,9 @@ from pdfminer.pdfparser import PDFParser
 
 class PdfUtilities:
 
+    def __init__(self):
+        pass
+
     def get_total_number_of_pages(self, pdf_file_name):
         with open(pdf_file_name, 'rb') as file:
             parser = PDFParser(file)

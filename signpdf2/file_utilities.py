@@ -18,6 +18,9 @@ class GetFileFromUrl(CreateTmpFileMixin):
 
 
 class WritePdfToDisk:
+    def __init__(self):
+        pass
+
     def write_pdf_to_disk(self, pdf_writer, pdf_name):
         """
         :param pdf_writer: PdfFileWriter object
